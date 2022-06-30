@@ -47,6 +47,14 @@ export const removeTask = (currentId) => {
   updateTasks(newTasks);
 }
 
+export const editTaskContent = (currentId, content, name) => {
+  const tasks = getTasks();
+  tasks[currentId].body = content;
+  tasks[currentId].name = name;
+  
+  updateTasks(tasks);
+}
+
 function App() {
   const [name, setName] = useState('');
   const [data, setData] = useGlobalState('data');
@@ -63,14 +71,6 @@ function App() {
     const object = {id, name, body, datetime, iscompleted, token};
     const tasks = getTasks();
     tasks.push(object);
-    updateTasks(tasks);
-  }
-
-  //todo
-  const editTaskContent = (currentId, content) => {
-    const tasks = getTasks();
-    tasks[currentId].body = content;
-    
     updateTasks(tasks);
   }
 

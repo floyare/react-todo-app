@@ -190,6 +190,7 @@ code {
   border-radius: 10px;
   cursor: pointer;
   margin-bottom: 15px;
+  margin-left: 5px;
 }
 
 .tasks-list .task .small-text{
@@ -235,4 +236,9 @@ code {
 
 .tasks-list .task .completed label .complete{
   color: rgb(69, 240, 35);
+}
+
+.task-newcontent{
+  max-width: 200px;
+  max-height: 100px;
 }
