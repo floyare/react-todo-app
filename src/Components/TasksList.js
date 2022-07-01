@@ -41,7 +41,6 @@ const TasksList = ({data}) => {
                 {editing && task.id === editingId && <textarea className="task-newcontent" value={newContent} onChange={(e) => {
                   setNewContent(e.target.value);
                 }}></textarea>}
-                <button onClick={() => {removeTask(task.id); setData(getTasks());}}> <AiFillDelete></AiFillDelete> Delete task</button>
                 {(!editing || task.id !== editingId ) && <button onClick={() => {setEditingId(task.id);setEditing(!editing); setNewName(task.name); setNewContent(task.body)}}><AiFillEdit></AiFillEdit> Edit</button>}
 
                 {editing && task.id === editingId && <button onClick={() => {
@@ -54,6 +53,8 @@ const TasksList = ({data}) => {
                     setData(getTasks());
                   }
                 }}><RiSave3Line></RiSave3Line> Save</button>}
+
+                <button className="delete-btn" onClick={() => {removeTask(task.id); setData(getTasks()); toast.success('Successfully deleted');}}> <AiFillDelete></AiFillDelete> Delete task</button>
               </div>
             );
         })}
