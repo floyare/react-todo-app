@@ -156,15 +156,43 @@ code {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
-  display: inline-block;
   margin: 25px 10px;
   padding: 5px 25px;
   max-width: 250px;
   vertical-align: top;
+	-webkit-flex: 1 5 auto;
+	-moz-flex: 1 5 auto;
+	flex: 1 5 auto;
+	align-self: auto;
+}
+
+.tasks-list .task input[type="text"], .tasks-list .task textarea{
+  outline: none;
+  border: 1px solid var(--color);
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: text;
+  padding: 5px 15px;
+  max-width: 150px;
+  max-height: 100px;
+  margin: 5px 0px;
 }
 
 .tasks-list .task-container{
   margin: 10px 20px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	justify-content:center;
+	-webkit-align-items: center;
+	align-items:center;
+	-webkit-align-content: center;
+	align-content:center;
 }
 
 .tasks-list h1{
@@ -178,8 +206,13 @@ code {
   font-size: 24px;
 }
 
-.tasks-list .task p, .tasks-list .task h2{
-  line-height: 30%;
+.tasks-list .task h2{
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.tasks-list .task p{
+  margin: 0;
 }
 
 .tasks-list .task button{
@@ -196,12 +229,14 @@ code {
 .tasks-list .task .small-text{
   color: var(--color);
   font-weight: 700;
+  margin-top: 10px;
 }
 
 .tasks-list .task .task-content{
   margin: 25px 10px;
   font-style: italic;
-  line-height: 100%
+  line-height: 100%;
+  word-wrap: break-word;
 }
 
 .tasks-list .task .completed{
@@ -241,4 +276,8 @@ code {
 .task-newcontent{
   max-width: 200px;
   max-height: 100px;
+}
+
+.delete-btn{
+  background: rgb(211, 76, 76) !important;
 }
